@@ -1,12 +1,14 @@
 #!/bin/bash
 
-echo "Creando estructura Asimétrica"
+aprobame_Profe=~/Estructura_Asimetrica
 
-mkdir -p ~/Estructura_Asimetrica/{correo/{cartas_{1..100},carteros_{1..10}},clientes/cartas_{1..100}}
+echo "Creando estructura Asimétrica..."
 
-echo "Verificando la estructura creada"
+mkdir -p "$aprobame_Profe"/{correo/{cartas_{1..100},carteros_{1..10}},clientes/cartas_{1..100}}
 
-tree ~/Estructura_Asimetrica/
+echo "Verificando la estructura creada..."
 
-echo "Estructura lograda con éxito"
+tree "$aprobame_Profe" --noreport | pr -T -s' ' -w 80 --column 4
+
+echo "Estructura lograda con éxito."
 
